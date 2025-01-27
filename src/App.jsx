@@ -16,6 +16,7 @@ const AppContainer = styled.div`
 const App = () => {
   return (
     <AppContainer>
+      <Navigation />
       <Hero />
       <Video />
       <About />
