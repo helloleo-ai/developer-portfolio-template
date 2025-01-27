@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import BackgroundPattern from './BackgroundPattern'
 
 const AboutSection = styled.section`
   min-height: 100vh;
@@ -76,7 +75,6 @@ const CardContent = styled.p`
 const About = () => {
   return (
     <AboutSection id="about">
-      <BackgroundPattern startColor="#6366f110" endColor="#8b5cf610" />
       <Container>
         <Title>About Me</Title>
         <ContentGrid>

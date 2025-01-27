@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaReact, FaJs, FaHtml5, FaCss3, FaGitAlt, FaNode } from 'react-icons/fa'
-import BackgroundPattern from './BackgroundPattern'
 
 const SkillsSection = styled.section`
   min-height: 100vh;
@@ -96,7 +95,6 @@ const skillsData = [
 const Skills = () => {
   return (
     <SkillsSection id="skills">
-      <BackgroundPattern startColor="#6366f108" endColor="#8b5cf608" />
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <SkillsGrid>

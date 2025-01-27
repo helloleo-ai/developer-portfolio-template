@@ -2,7 +2,6 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Navigation from './components/Navigation'
-import BackgroundPattern from './components/BackgroundPattern'
 import Hero from './components/Hero'
 import Video from './components/Video'
 import About from './components/About'
@@ -18,7 +17,6 @@ const AppContainer = styled.div`
 const App = () => {
   return (
     <AppContainer>
-      <BackgroundPattern />
       <Navigation />
       <Hero />
       <Video />
