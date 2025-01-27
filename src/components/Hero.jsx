@@ -4,20 +4,27 @@ import { motion } from 'framer-motion'
 
 const HeroSection = styled.section`
   min-height: 100vh;
-  padding-bottom: 15vh;
+  padding: 0 5vw 15vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
   position: relative;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5vh;
+  }
 `
 
 const Card = styled(motion.div)`
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   padding: clamp(1.5rem, 5vw, 3rem);
-  width: 90%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: ${props => props.isMobile ? 'column' : 'row'};
   gap: clamp(1rem, 3vw, 2rem);
@@ -104,6 +111,75 @@ const Hero = () => {
   }, [])
 
   return (
+const PreviewSection = styled.div`
+  flex: 1;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+`
+
+const PreviewCard = styled(motion.a)`
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  
+  h3 {
+    font-size: 1.2rem;
+    color: #4b5563;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+`
+
+const Hero = () => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const previewSections = [
+    {
+      title: "Projects",
+      description: "Check out my latest work and side projects",
+      href: "#projects"
+    },
+    {
+      title: "Skills",
+      description: "Technologies and tools I work with",
+      href: "#skills"
+    },
+    {
+      title: "About",
+      description: "Learn more about my journey and experience",
+      href: "#about"
+    },
+    {
+      title: "Contact",
+      description: "Let's connect and discuss opportunities",
+      href: "#contact"
+    }
+  ]
+
+  return (
     <HeroSection id="hero">
       <Card
         isMobile={isMobile}
@@ -157,6 +233,36 @@ const Hero = () => {
           </CTAButton>
         </ContentWrapper>
       </Card>
+      
+      <PreviewSection>
+        {previewSections.map((section, index) => (
+          <PreviewCard
+            key={section.title}
+            href={section.href}
+            as={motion.a}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.querySelector(section.href);
+              if (element) {
+                const headerOffset = 100;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }}
+          >
+            <h3>{section.title}</h3>
+            <p>{section.description}</p>
+          </PreviewCard>
+        ))}
+      </PreviewSection>
     </HeroSection>
   )
 }
