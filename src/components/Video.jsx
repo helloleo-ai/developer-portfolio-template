@@ -4,11 +4,14 @@ import { motion } from 'framer-motion'
 
 const VideoSection = styled.section`
   min-height: 60vh;
-  padding: 4rem 2rem;
+  margin-top: -20vh;
+  padding: 0 2rem 4rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
 `
 
 const VideoContainer = styled(motion.div)`

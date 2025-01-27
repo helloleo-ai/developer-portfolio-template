@@ -2,11 +2,14 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 const HeroSection = styled.section`
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
+  position: relative;
+  z-index: 1;
 `
 
 const Card = styled(motion.div)`
