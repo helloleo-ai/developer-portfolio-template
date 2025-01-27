@@ -75,6 +75,22 @@ const Description = styled.p`
   color: #6b7280;
   line-height: 1.6;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
+  margin-bottom: 1.5rem;
+`
+
+const CTAButton = styled(motion.a)`
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  cursor: pointer;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 `
 
 const Hero = () => {
@@ -113,6 +129,19 @@ const Hero = () => {
             Crafting beautiful and intuitive user experiences with modern web technologies.
             Passionate about clean code and pixel-perfect designs.
           </Description>
+          <CTAButton
+            href="#contact"
+            whileHover={{ 
+              y: -2,
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+            }}
+            whileTap={{ 
+              y: 0,
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+            }}
+          >
+            Get in Touch
+          </CTAButton>
         </ContentWrapper>
       </Card>
     </HeroSection>
