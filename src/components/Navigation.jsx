@@ -6,7 +6,7 @@ const Nav = styled(motion.nav)`
   position: fixed;
   top: 2rem;
   right: 2rem;
-  z-index: 100;
+  z-index: 1000;
 `
 
 const MenuButton = styled(motion.button)`
