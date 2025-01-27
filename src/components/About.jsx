@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import BackgroundPattern from './BackgroundPattern'
 
 const AboutSection = styled.section`
   min-height: 100vh;
@@ -12,6 +13,7 @@ const AboutSection = styled.section`
   align-items: center;
   position: relative;
   z-index: 3;
+  overflow: hidden;
 `
 
 const Container = styled.div`
@@ -74,6 +76,7 @@ const CardContent = styled.p`
 const About = () => {
   return (
     <AboutSection id="about">
+      <BackgroundPattern startColor="#6366f110" endColor="#8b5cf610" />
       <Container>
         <Title>About Me</Title>
         <ContentGrid>

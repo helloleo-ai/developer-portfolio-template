@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import BackgroundPattern from './BackgroundPattern'
 
 const ProjectsSection = styled.section`
   min-height: 100vh;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
+  position: relative;
+  overflow: hidden;
 `
 
 const ProjectsGrid = styled.div`
@@ -101,6 +104,7 @@ const projectData = [
 const Projects = () => {
   return (
     <ProjectsSection id="projects">
+      <BackgroundPattern startColor="#6366f108" endColor="#8b5cf608" />
       <SectionTitle>Projects</SectionTitle>
       <ProjectsGrid>
         {projectData.map((project) => (

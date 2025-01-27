@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import BackgroundPattern from './BackgroundPattern'
 
 const ContactSection = styled.section`
   min-height: 100vh;
@@ -9,6 +10,8 @@ const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 `
 
 const Container = styled.div`
@@ -113,6 +116,7 @@ const Contact = () => {
 
   return (
     <ContactSection id="contact">
+      <BackgroundPattern startColor="#6366f108" endColor="#8b5cf608" />
       <Container>
         <Title>Get in Touch</Title>
         <Form onSubmit={handleSubmit}>

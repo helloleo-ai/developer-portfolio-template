@@ -7,18 +7,18 @@ const PatternContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 160vh;
+  height: 100%;
   overflow: hidden;
   z-index: 0;
 `
 
 const Shape = styled(motion.div)`
   position: absolute;
-  background: linear-gradient(135deg, #6366f120, #8b5cf620);
+  background: ${props => `linear-gradient(135deg, ${props.startColor || '#6366f120'}, ${props.endColor || '#8b5cf620'})`};
   border-radius: 50%;
 `
 
-const BackgroundPattern = () => {
+const BackgroundPattern = ({ startColor = '#6366f120', endColor = '#8b5cf620', height = '100%' }) => {
   const shapes = Array.from({ length: 8 }).map((_, i) => ({
     size: Math.random() * 300 + 100,
     left: Math.random() * 100,

@@ -2,11 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaReact, FaJs, FaHtml5, FaCss3, FaGitAlt, FaNode } from 'react-icons/fa'
+import BackgroundPattern from './BackgroundPattern'
 
 const SkillsSection = styled.section`
   min-height: 100vh;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
+  position: relative;
+  overflow: hidden;
 `
 
 const Container = styled.div`
@@ -93,6 +96,7 @@ const skillsData = [
 const Skills = () => {
   return (
     <SkillsSection id="skills">
+      <BackgroundPattern startColor="#6366f108" endColor="#8b5cf608" />
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <SkillsGrid>
