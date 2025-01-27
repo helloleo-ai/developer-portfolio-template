@@ -11,6 +11,7 @@ import Contact from './components/Contact'
 const AppContainer = styled.div`
   min-height: 100vh;
   position: relative;
+  isolation: isolate;
 `
 
 const App = () => {

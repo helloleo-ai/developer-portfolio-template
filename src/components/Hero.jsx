@@ -10,7 +10,6 @@ const HeroSection = styled.section`
   justify-content: center;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
   position: relative;
-  z-index: 2;
 `
 
 const Card = styled(motion.div)`
@@ -29,7 +28,6 @@ const Card = styled(motion.div)`
     0 4px 4px rgba(0,0,0,0.06),
     0 8px 8px rgba(0,0,0,0.072);
   position: relative;
-  z-index: 3;
   
   &::before {
     content: '';

@@ -11,7 +11,6 @@ const AboutSection = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 2;
   overflow: hidden;
 `
 
