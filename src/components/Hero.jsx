@@ -110,7 +110,6 @@ const Hero = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  return (
 const PreviewSection = styled.div`
   flex: 1;
   max-width: 600px;
@@ -144,17 +143,6 @@ const PreviewCard = styled(motion.a)`
     transform: translateY(-2px);
   }
 `
-
-const Hero = () => {
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   const previewSections = [
     {
