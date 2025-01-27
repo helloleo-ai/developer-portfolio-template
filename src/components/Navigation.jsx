@@ -38,12 +38,14 @@ const MenuButton = styled(motion.button)`
   }
 `
 
-const MenuIcon = styled.div`
+const MenuIcon = styled.div.attrs(props => ({
+  'data-isopen': props.isOpen
+}))`
   width: 20px;
   height: 2px;
   background: #6366f1;
   position: relative;
-  transform: ${props => props.isOpen ? 'rotate(45deg)' : 'none'};
+  transform: ${props => props['data-isopen'] ? 'rotate(45deg)' : 'none'};
   transition: transform 0.3s ease;
 
   &::before,
@@ -57,13 +59,13 @@ const MenuIcon = styled.div`
   }
 
   &::before {
-    top: ${props => props.isOpen ? '0' : '-6px'};
-    transform: ${props => props.isOpen ? 'rotate(90deg)' : 'none'};
+    top: ${props => props['data-isopen'] ? '0' : '-6px'};
+    transform: ${props => props['data-isopen'] ? 'rotate(90deg)' : 'none'};
   }
 
   &::after {
-    bottom: ${props => props.isOpen ? '0' : '-6px'};
-    opacity: ${props => props.isOpen ? '0' : '1'};
+    bottom: ${props => props['data-isopen'] ? '0' : '-6px'};
+    opacity: ${props => props['data-isopen'] ? '0' : '1'};
   }
 `
 
