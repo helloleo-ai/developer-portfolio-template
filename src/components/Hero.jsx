@@ -131,6 +131,10 @@ const Hero = () => {
           </Description>
           <CTAButton
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault()
+              document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
+            }}
             whileHover={{ 
               y: -2,
               boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
