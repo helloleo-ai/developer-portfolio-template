@@ -132,8 +132,18 @@ const Hero = () => {
           <CTAButton
             href="#contact"
             onClick={(e) => {
-              e.preventDefault()
-              document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
+              e.preventDefault();
+              const element = document.querySelector('#contact');
+              if (element) {
+                const headerOffset = 100;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
             }}
             whileHover={{ 
               y: -2,
