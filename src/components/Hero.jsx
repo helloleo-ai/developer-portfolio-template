@@ -76,7 +76,7 @@ const Description = styled.p`
 
 const Hero = () => {
   return (
-    <HeroSection>
+    <HeroSection id="hero">
       <Card
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

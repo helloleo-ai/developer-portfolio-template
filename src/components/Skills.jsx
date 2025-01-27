@@ -92,7 +92,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <SkillsSection>
+    <SkillsSection id="skills">
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <SkillsGrid>

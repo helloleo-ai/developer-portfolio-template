@@ -73,7 +73,7 @@ const CardContent = styled.p`
 
 const About = () => {
   return (
-    <AboutSection>
+    <AboutSection id="about">
       <Container>
         <Title>About Me</Title>
         <ContentGrid>

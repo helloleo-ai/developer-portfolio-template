@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Video from './components/Video'
 import About from './components/About'

@@ -100,7 +100,7 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <ProjectsSection>
+    <ProjectsSection id="projects">
       <SectionTitle>Projects</SectionTitle>
       <ProjectsGrid>
         {projectData.map((project) => (
