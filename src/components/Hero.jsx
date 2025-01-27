@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import BackgroundPattern from './BackgroundPattern'
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -91,7 +90,6 @@ const Hero = () => {
 
   return (
     <HeroSection id="hero">
-      <BackgroundPattern />
       <Card
         isMobile={isMobile}
         initial={{ opacity: 0, y: 20 }}

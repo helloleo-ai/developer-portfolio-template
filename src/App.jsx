@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Navigation from './components/Navigation'
+import BackgroundPattern from './components/BackgroundPattern'
 import Hero from './components/Hero'
 import Video from './components/Video'
 import About from './components/About'
@@ -11,11 +12,13 @@ import Contact from './components/Contact'
 
 const AppContainer = styled.div`
   min-height: 100vh;
+  position: relative;
 `
 
 const App = () => {
   return (
     <AppContainer>
+      <BackgroundPattern />
       <Navigation />
       <Hero />
       <Video />
