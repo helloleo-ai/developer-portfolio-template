@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const VideoSection = styled.section`
   min-height: 60vh;
   margin-top: -20vh;
-  padding: 0 2rem 4rem;
+  padding: 0 2rem 8rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
   display: flex;
   justify-content: center;

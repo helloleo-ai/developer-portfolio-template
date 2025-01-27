@@ -4,11 +4,14 @@ import { motion } from 'framer-motion'
 
 const AboutSection = styled.section`
   min-height: 100vh;
+  margin-top: -6rem;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #e3e6e8 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 3;
 `
 
 const Container = styled.div`
