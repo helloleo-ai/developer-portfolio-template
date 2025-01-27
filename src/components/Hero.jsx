@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import BackgroundPattern from './BackgroundPattern'
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -77,6 +78,7 @@ const Description = styled.p`
 const Hero = () => {
   return (
     <HeroSection id="hero">
+      <BackgroundPattern />
       <Card
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
