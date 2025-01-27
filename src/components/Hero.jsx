@@ -16,11 +16,12 @@ const HeroSection = styled.section`
 const Card = styled(motion.div)`
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  padding: 3rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
   width: 90%;
   max-width: 600px;
   display: flex;
-  gap: 2rem;
+  flex-direction: ${props => props.isMobile ? 'column' : 'row'};
+  gap: clamp(1rem, 3vw, 2rem);
   align-items: center;
   box-shadow: 
     0 1px 1px rgba(0,0,0,0.034),
@@ -49,37 +50,49 @@ const ContentWrapper = styled.div`
 `
 
 const Avatar = styled(motion.div)`
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
+  width: clamp(80px, 15vw, 120px);
+  height: clamp(80px, 15vw, 120px);
+  border-radius: 50%;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   flex-shrink: 0;
 `
 
 const Title = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: clamp(0.3rem, 2vw, 0.5rem);
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
 
 const Subtitle = styled.p`
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: #4b5563;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
 `
 
 const Description = styled.p`
   color: #6b7280;
   line-height: 1.6;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 `
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768)
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <HeroSection id="hero">
       <BackgroundPattern />
       <Card
+        isMobile={isMobile}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
