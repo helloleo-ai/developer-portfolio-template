@@ -49,11 +49,11 @@ const ContentWrapper = styled.div`
   flex: 1;
 `
 
-const Avatar = styled(motion.div)`
+const Avatar = styled(motion.img)`
   width: clamp(80px, 15vw, 120px);
   height: clamp(80px, 15vw, 120px);
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  object-fit: cover;
   flex-shrink: 0;
 `
 
@@ -101,6 +101,8 @@ const Hero = () => {
         }}
       >
         <Avatar 
+          src="https://helloleo.dev/wp-content/uploads/brizy/imgs/cropped-Leo-542x542x10x0x520x542x1720683236.png"
+          alt="Profile"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         />
