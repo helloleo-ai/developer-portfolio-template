@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Hero from './components/Hero'
+import Video from './components/Video'
 import About from './components/About'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <AppContainer>
       <Hero />
+      <Video />
       <About />
       <Skills />
       <Projects />
